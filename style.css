@@ -1,0 +1,19 @@
+body {
+    display: grid;
+    margin: auto;
+    max-width: 1280px;
+}
+.event-header {
+    font-size: 22px;
+}
+
+.event-card {
+    padding: 2px 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    width: 300px;
+
+}
+
+#hovedKalender {
+}

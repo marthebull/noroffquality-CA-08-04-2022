@@ -15,5 +15,7 @@ body {
 
 }
 
-#hovedKalender {
+#main {
+    display: flex;
+    
 }

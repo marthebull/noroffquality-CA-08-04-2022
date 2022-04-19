@@ -1,4 +1,4 @@
-fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events", {
+fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events?per_page=99", {
 	"method": "GET"
 })
 .then(response => {
@@ -8,7 +8,7 @@ fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events", {
 //sortert alt etter nærmeste dato.
 .then(data => {
     if (data) {
-        //console.log(data.events)
+        console.log(data.events)
         data.events.sort((a,b) => {
             return new Date(a.start_date) - new Date(b.start_date)
         })
@@ -29,8 +29,9 @@ const listEvents = (sortedList) => {
 
 
     //dette er hoved listen
+    const hovedKalender = mappedList.slice(0, 10)
     
-    mappedList.forEach(ev2 => {
+    hovedKalender.forEach(ev2 => {
         let newList = `
             <div class="event-card">
                 <p>${ev2.date}</p>

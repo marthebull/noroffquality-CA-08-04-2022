@@ -25,7 +25,7 @@ const listEvents = (sortedList) => {
     
     //laget en ny array for de objektene vi skal bruke i oppgaven
     let mappedList = sortedList.map(ev => ({title: ev.title, date: ev.start_date, description: ev.excerpt, tags: ev.tags }))
-    //console.log(mappedList);
+    console.log(mappedList);
 
 
     //dette er hoved listen

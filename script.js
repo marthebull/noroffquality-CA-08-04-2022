@@ -13,8 +13,6 @@ fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events", {
             return new Date(a.start_date) - new Date(b.start_date)
         })
         listEvents(data.events)
-        
-
     }
 })
 let list = document.querySelector("div#hovedKalender");

@@ -18,6 +18,7 @@ fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events?per_page=99", {
         })
         myList = (data.events)
         listEvents(myList)
+        listEvents1(myList)
         //console.log(allEvents);
         console.log("nå kan du aktivere filtrering");
     }
@@ -27,44 +28,57 @@ fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events?per_page=99", {
 let list = document.querySelector("div#hovedKalender");
 let miniList = document.querySelector("div#miniKalender");
 
-const listEvents = (sortedList) => {
-    list.innerHTML = "";
 
+let listEvents = (sortedList) => {
+    list.innerHTML = "";
     //console.log(sortedList);
-    
+
     //laget en ny array for de objektene vi skal bruke i oppgaven
     let mappedList = sortedList.map(ev => ({title: ev.title, date: ev.start_date, description: ev.excerpt, tags: ev.tags }))
     //console.log(mappedList);
 
 
-    //dette er hoved listen
+    //dette er hovedlisten
     const hovedKalender = mappedList.slice(0, 10)
-    
-    hovedKalender.forEach(ev2 => {
-        let newList = `
-            <div class="event-card">
-                <p>${ev2.date}</p>
-                <p class="event-header"><strong>${ev2.title}</strong></p>
-                <p>${ev2.description}</p>
+    //console.log(hovedKalender);
+
+    hovedKalender.forEach(ev => {
+        let newList =`
+            <div class="event-card" >
+                <p>${ev.date}</p>
+                <p class="event-header"><strong>${ev.title}</strong></p>
+                <p>${ev.description}</p>
             </div>`;
         list.innerHTML += newList;
     }) 
 
-    // dette er Den lille kalender øverst på siden
-    const miniKalender = mappedList.slice(0, 3)
-    //console.log(miniKalender);
 
-    miniKalender.forEach(ev3 => {
+
+}
+
+// lister ut minikalenderen på siden, sortert og mappet
+
+let listEvents1 = (sortedList1) => {
+    miniList.innerHTML = "";
+    //console.log(sortedList1);
+
+    //laget en ny array for de objektene vi skal bruke i oppgaven
+    let mappedList1 = sortedList1.map(ev => ({title: ev.title, date: ev.start_date, description: ev.excerpt, tags: ev.tags }))
+    //console.log(mappedList);
+     const miniKalender = mappedList1.slice(0, 3)
+    //console.log(miniKalender);
+    miniKalender.forEach(ev => {
         let miniList1 = `
             <div class="event-card">
-                <p>${ev3.date}</p>
-                <p class="event-header"><strong>${ev3.title}</strong></p>
-                <p>${ev3.description}</p>
-            </div>`;
+                <p>${ev.date}</p>
+                <p class="event-header"><strong>${ev.title}</strong></p>
+                <p>${ev.description}</p>
+            </div>;`
         miniList.innerHTML += miniList1;
-
-
     })
+
+     // dette er Den lille kalender øverst på siden
+     //console.log(miniKalender);
 }
 
 
@@ -76,12 +90,34 @@ const studietypeSelector = document.querySelector("#filterStudietype")
 
 
 let filterFunction = () => {
-    console.log(myList);
+    //console.log(myList);
 
     //rolle selector
     let filterRoller = [];
+    let filteredList = [];
     filterRoller.push(rolleSelector.value);
     console.log(filterRoller);
+
+    if (filterRoller == "all") {
+        filteredList = myList.slice();// Make a copy to "protect" the original list
+    } else {
+        console.log(myList);
+        //Filter ot those animals with type equal to the type chosen
+        filteredList = myList.filter((item)=>{
+            //console.log("This is the item: "+item.tags);
+            //console.log(item.tags);
+            //console.log("This is the filter: "+filterRoller);
+            for (let tag of item.tags) {
+                //console.log(tag.id);
+                if (tag.id == filterRoller) {
+                    return true;
+                }
+            }
+            return false;
+
+          });
+    } 
+    //console.log(filteredList);
 
     //Periode selector
         // let filterPeriode= [];
@@ -98,9 +134,8 @@ let filterFunction = () => {
     // filterStudietype.push(studietypeSelector.value)
     // console.log(filterStudietype);
 
-
-}
-
+    listEvents(filteredList)
+}   
 rolleSelector.addEventListener("change", filterFunction)
 kategoriSelector.addEventListener("change", filterFunction)
 periodeSelector.addEventListener("change", filterFunction)

@@ -105,7 +105,7 @@ let filterFunction = () => {
         //Filter ot those animals with type equal to the type chosen
         filteredList = myList.filter((item)=>{
             //console.log("This is the item: "+item.tags);
-            //console.log(item.tags);
+            console.log(item.tags);
             //console.log("This is the filter: "+filterRoller);
             for (let tag of item.tags) {
                 //console.log(tag.id);

@@ -44,10 +44,12 @@ let listEvents = (sortedList) => {
 
     hovedKalender.forEach(ev => {
         let newList =`
-            <div class="event-card" >
+            <div class="event-card">
                 <p>${ev.date}</p>
-                <p class="event-header"><strong>${ev.title}</strong></p>
-                <p>${ev.description}</p>
+                <details>
+                    <summary class="event-header"><strong>${ev.title}</strong></summary>
+                    <p>${ev.description}</p>
+                </details>
             </div>`;
         list.innerHTML += newList;
     }) 
@@ -55,6 +57,7 @@ let listEvents = (sortedList) => {
 
 
 }
+
 
 // lister ut minikalenderen på siden, sortert og mappet
 
@@ -69,10 +72,10 @@ let listEvents1 = (sortedList1) => {
     //console.log(miniKalender);
     miniKalender.forEach(ev => {
         let miniList1 = `
-            <div class="event-card">
+            <div class="event-card" >
                 <p>${ev.date}</p>
                 <p class="event-header"><strong>${ev.title}</strong></p>
-                <p>${ev.description}</p>
+                
             </div>`;
         miniList.innerHTML += miniList1;
     })

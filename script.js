@@ -73,7 +73,7 @@ let listEvents1 = (sortedList1) => {
                 <p>${ev.date}</p>
                 <p class="event-header"><strong>${ev.title}</strong></p>
                 <p>${ev.description}</p>
-            </div>;`
+            </div>`;
         miniList.innerHTML += miniList1;
     })
 
@@ -125,14 +125,50 @@ let filterFunction = () => {
         // console.log(filterPeriode);
 
     //kategori selector
-    // let filterKategori = [];
-    // filterKategori.push(kategoriSelector.value)
-    // console.log(filterKategori);
+    let filterKategori = [];
+    filterKategori.push(kategoriSelector.value);
+    console.log(filterKategori);
+
+    if (filterKategori != "all") {
+        console.log(filteredList);
+        filteredList = filteredList.filter((item) => {
+            //console.log("This is the item: "+item.tags);
+            //console.log(item.tags);
+            //console.log("This is the filter: "+filterKategori);
+            for (let tag of item.tags) {
+                if (tag.id == filterKategori) {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+    console.log(filteredList);
 
     // //studietype selector
     // let filterStudietype = [];
     // filterStudietype.push(studietypeSelector.value)
     // console.log(filterStudietype);
+
+    let filterStudietype = [];
+    filterStudietype.push(studietypeSelector.value);
+    console.log(filterStudietype);
+
+    if (filterStudietype != "all") {
+        console.log(filteredList);
+        filteredList = filteredList.filter((item) => {
+            //console.log("This is the item: "+item.tags);
+            //console.log(item.tags);
+            //console.log("This is the filter: "+filterStudietype);
+            for (let tag of item.tags) {
+                if (tag.id == filterStudietype) {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+    console.log(filteredList);
 
     listEvents(filteredList)
 }   

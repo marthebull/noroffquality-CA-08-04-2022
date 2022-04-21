@@ -84,7 +84,7 @@ let listEvents1 = (sortedList1) => {
 
 
 const rolleSelector = document.querySelector("#filterRolle")
-const periodeSelector = document.querySelector("#filterPeriode")
+const semesterSelector = document.querySelector("#filterSemester")
 const kategoriSelector = document.querySelector("#filterKategori")
 const studietypeSelector = document.querySelector("#filterStudietype")
 
@@ -174,7 +174,7 @@ let filterFunction = () => {
 }   
 rolleSelector.addEventListener("change", filterFunction)
 kategoriSelector.addEventListener("change", filterFunction)
-periodeSelector.addEventListener("change", filterFunction)
+semesterSelector.addEventListener("change", filterFunction)
 studietypeSelector.addEventListener("change", filterFunction)
 
 

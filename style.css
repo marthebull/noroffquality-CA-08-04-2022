@@ -16,16 +16,24 @@ main {
 
 h1, h2 {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-h3 {
+h3, strong, summary {
     font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
-p {
+p, #om-noroff-ul > li {
     margin: 15px 0;
+    line-height: 1.8rem;
+}
+
+a {
+    font-weight: 600;
+    color: black;
 }
 
 button {
@@ -34,6 +42,8 @@ button {
     font-weight: 700;
     border: none;
     background-color: #75FABC;
+    width: 300px;
+    margin: auto;
 }
 
 /* header ------------------------------------------------------*/
@@ -107,11 +117,11 @@ header {
 }
 
 #filter {
-    max-width: 900px;
+    width: 850px;
     margin: auto;
     display: flex;
     flex-direction: row;
-    gap: 70px;
+    gap: 45px;
     justify-content: space-between;
 }
 
@@ -120,15 +130,16 @@ header {
     width: 170px;
     border: none;
     border-radius: 3px;
+    font-size: 1rem;
     /*Gjør dette for å få litt space til høyre for pilen i dropdown select*/
     border-right: 16px solid transparent;
 }
 
 
-/* <event cards --------------------------------------------------------------*/
+/*event cards --------------------------------------------------------------*/
 
 .event-card {
-    padding: 10px 16px;
+    padding: 0 16px;
     margin-bottom: 15px;
     width: 100%;
     border: 1px solid #D1D1D1;
@@ -141,9 +152,45 @@ header {
     font-size: 22px;
 }
 
+/* Må style details osv osv her*/
 
+/* Hovedkalender --------------------------------------------------------------*/
 
-.om-noroff {
+#hovedKalender {
+    width: 850px;
+    margin: 50px auto;
+
+}
+
+/*Om noroffquality --------------------------------------------------------------*/
+
+#om-noroff-cont {
+
     background-color: #FF2F0230;
-   
+    width: 100vw;
+    margin-top: 50px;
+    padding: 50px 0;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 } 
+
+#om-noroff {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    column-gap: 100px;
+    row-gap: 30px;
+}
+
+#om-noroff * {
+    flex: 1;
+}
+
+#om-noroff-overskrift {
+    flex: 100%;
+}

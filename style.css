@@ -1,19 +1,31 @@
 /* Global style --------------------------------------------------*/
 
 * { 
-    
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
     font-family: 'Poppins', Verdana, Tahoma, sans-serif;
+}
+
+main {
+    display: grid;
+    max-width: 1280px;
+    margin: auto;
+    position: relative;
 }
 
 h1, h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 1.1rem;
+}
+p {
+    margin: 15px 0;
 }
 
 button {
@@ -28,61 +40,108 @@ button {
 
 header {
     background-color: #FF2F02;
-    width: 100vw;
-    padding: 30px;
+    max-width: 100vw;
+    padding: 20px;
+    height: 15vh;
 }
 
 #header-cont {
     max-width: 1280px;
     margin: auto;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #logo {
-    width: 200px;
-    margin-right: 100px;
+    height: 50px;
+    position: relative;
 }
 
 #nav li {
     list-style: none;
     margin: 10px;
     font-weight: 600;
-    float: left;
     text-decoration: underline;
+    display: inline-block;
 }
 
 #nav li:last-child {
     color: white;
     text-decoration: none;
     border: 2px solid;
-    padding: 10px;
+    padding: 10px 20px;
     margin-left: 30px;
 }
 
-/*--------------------------------------------------------------*/
+/* Intro --------------------------------------------------------------*/
 
-
-body {
-    display: grid;
-    margin: auto;
-    
+#intro {
+    height: 70vh;
+    display: flex;
+    gap: 100px;
+    align-items: center;
 }
+
+#introText, #miniKalender {
+    flex: 1;
+}
+
+
+/* Filter --------------------------------------------------------------*/
+
+#filter-cont {
+    display: flex;
+    background-color: #404040;
+    height: 15vh;
+    max-width: 100vw;
+    align-items: center;
+    /*må gjøre dette for å få bakgrunnen til 100% vw*/
+    width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+#filter {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    justify-content: space-between;
+}
+
+.dropdown {
+    padding: 10px;
+    width: 170px;
+    border: none;
+    border-radius: 3px;
+    /*Gjør dette for å få litt space til høyre for pilen i dropdown select*/
+    border-right: 16px solid transparent;
+}
+
+
+/* <event cards --------------------------------------------------------------*/
+
+.event-card {
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+    background-color: #FAFAFA;
+
+}
+
 .event-header {
     font-size: 22px;
 }
 
-.event-card {
-    padding: 2px 16px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px;
-    width: 300px;
 
-}
-
-#main {
-    display: flex;
-
-}
 
 .om-noroff {
     background-color: #FF2F0230;

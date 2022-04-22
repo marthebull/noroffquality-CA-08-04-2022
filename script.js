@@ -1,7 +1,7 @@
 let myList;
 
 
-fetch("http://marthebull.no/cms/wp-json/tribe/events/v1/events?per_page=99", {
+fetch("https://marthebull.no/cms/wp-json/tribe/events/v1/events?per_page=99", {
 	"method": "GET"
 })
 .then(response => {

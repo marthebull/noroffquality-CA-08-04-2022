@@ -139,20 +139,55 @@ header {
 /*event cards --------------------------------------------------------------*/
 
 .event-card {
-    padding: 0 16px;
+    padding: 5px 16px;
     margin-bottom: 15px;
     width: 100%;
     border: 1px solid #D1D1D1;
     border-radius: 3px;
     background-color: #FAFAFA;
-
+    display: flex;
+    gap: 30px;
+    align-items: top;
 }
 
 .event-header {
     font-size: 22px;
+    margin-top: 20px;
 }
 
-/* Må style details osv osv her*/
+.date-cont {
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.day {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.month {
+    line-height: 0;
+}
+
+
+/* Fjerner default pilen til details*/
+
+details > summary:first-of-type {
+    list-style-type: none;
+}
+
+.fa-chevron-down {
+    font-size: .8rem;
+    padding-left: 10px;
+}
+
+
+
+
 
 /* Hovedkalender --------------------------------------------------------------*/
 

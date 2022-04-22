@@ -157,6 +157,7 @@ header {
 .event-header {
     font-size: 22px;
     margin-top: 20px;
+    text-align: left;
 }
 
 .date-cont {

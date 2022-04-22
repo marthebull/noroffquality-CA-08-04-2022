@@ -29,6 +29,7 @@ h3, strong, summary {
 p, #om-noroff-ul > li {
     margin: 15px 0;
     line-height: 1.8rem;
+    text-align: left;
 }
 
 a {
@@ -98,6 +99,9 @@ header {
     flex: 1;
 }
 
+#miniKalender {
+    text-align: center;
+}
 
 /* Filter --------------------------------------------------------------*/
 
@@ -191,10 +195,11 @@ details > summary:first-of-type {
 
 /* Hovedkalender --------------------------------------------------------------*/
 
+
 #hovedKalender {
     width: 850px;
     margin: 50px auto;
-
+    text-align: center;
 }
 
 /*Om noroffquality --------------------------------------------------------------*/

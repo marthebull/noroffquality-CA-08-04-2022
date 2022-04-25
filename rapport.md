@@ -1,3 +1,12 @@
+Netlify: 
+https://noroffqlty.netlify.app/
+
+API: 
+https://marthebull.no/cms/wp-json/tribe/events/v1/events?per_page=99"
+
+
+
+
 - Felles Rapport:
 begynte med å laste ned en plugin som het Event Calender for å ligge inn Api-en vi ønsket å bruke.
 valget gikk for denne plugin siden den gjorde ting letter for oss å få ut den informasjonen vi ønsket.

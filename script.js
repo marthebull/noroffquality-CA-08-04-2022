@@ -95,7 +95,40 @@ let listEvents1 = (sortedList1) => {
      //console.log(miniKalender);
 }
 
+const loadBtn = document.querySelector("#loadBtn")
 
+let loadFunction = (gogo) => {
+    console.log("heihei");
+    list.innerHTML = "";
+
+    fullKalender = myList;
+    //console.log(fullKalender);
+    let mappedList2 = fullKalender.map(ev => ({title: ev.title, date: ev.start_date, description: ev.excerpt, tags: ev.tags }))
+    //console.log(mappedList2);
+
+    mappedList2.forEach(ev => {
+        let eventDate = new Date(ev.date);
+        //console.log(eventDate);
+        let eventMonth = eventDate.getMonth();
+        //console.log(months[eventMonth]);
+        let newList =`
+            <div class="event-card">
+                <div class="date-cont">
+                    <p class="day">${eventDate.getDate()}</p>
+                    <p class="month">${months[eventMonth]}</p>
+                </div>
+                <details>
+                    <summary class="event-header">
+                    <strong>${ev.title}<i class="fas fa-chevron-down"></i></strong>
+                    </summary>
+                    <p>${ev.description}</p>
+                </details>
+            </div>`;
+        list.innerHTML += newList;
+    })
+
+}
+loadBtn.addEventListener("click", loadFunction)
 
 const rolleSelector = document.querySelector("#filterRolle")
 const semesterSelector = document.querySelector("#filterSemester")

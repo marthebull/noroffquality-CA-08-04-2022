@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css" media="screen and (min-width: 700px)">
+    <link rel="stylesheet" href="style.css" media="screen and (min-width: 1000px)">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script src="./script.js" defer></script>
     <title>NoroffQuality</title>
@@ -32,7 +34,7 @@
             <div id="introText">
                 <h1>Noroff Quality</h1>
                 <p>Her finner du oversikt over kvalitetsarbeid på Noroff gjennom <a href = "">årshjulet</a>, <a href = "">ressurser</a> for <a href = "">studenter</a> og <a href = "">ansatte</a> samt aktuelle <a href = "">undersøkelser</a> og <a href = "">rapporter</a> i arkivet.</p>
-                <p>Les mer om Noroffs kvalitetsarbeid <a href="#om-noroff-cont">her.</a> </p>
+                <p id="intro-last">Les mer om Noroffs kvalitetsarbeid <a href="#om-noroff-cont">her.</a> </p>
             </div>
             <div id="miniKalender">
                 <img src="./images/1487(1).gif" alt="spinner" id="miniSpinner">
@@ -81,7 +83,7 @@
             <img src="./images/1487(1).gif" alt="spinner" id="hovedSpinner">
         </div>
 
-            <button>Last inn flere</button>
+            <button id="loadBtn">Last inn flere</button>
         
         <div id="om-noroff-cont">
             <div id="om-noroff">

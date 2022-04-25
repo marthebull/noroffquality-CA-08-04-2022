@@ -109,9 +109,7 @@ header {
 /* Filter --------------------------------------------------------------*/
 
 #filter-icon {
-    color: white;
-    position: absolute;
-    
+    display: none;
 }
 
 #filter-cont {
@@ -127,7 +125,9 @@ header {
 	right: 50%;
 	margin-left: -50vw;
 	margin-right: -50vw;
+    position: relative;
 }
+
 
 #filter {
     width: 850px;
@@ -278,12 +278,22 @@ details > summary:first-of-type {
     }
 
     #filter-cont {
-        height: 70px;
+        height: 100px;
         display: block;
+        display: flex;
+        justify-content: right;
+
     }
     
     #filter {
         display: none;
+    }
+
+    #filter-icon {
+        display: block;
+        color: white;
+        width: 50px;
+        margin-right: 50px;
     }
 
     .event-card {

@@ -115,7 +115,7 @@ header {
 #filter-cont {
     display: flex;
     background-color: #404040;
-    height: 15vh;
+    min-height: 15vh;
     max-width: 100vw;
     align-items: center;
     /*må gjøre dette for å få bakgrunnen til 100% vw*/
@@ -130,11 +130,12 @@ header {
 
 
 #filter {
-    width: 850px;
+    max-width: 850px;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    gap: 20px;
 }
 
 .dropdown {
@@ -286,11 +287,13 @@ details > summary:first-of-type {
     #filter {
         display: flex;
     }
-    select#filter {
-        margin: auto;
-    }
+    
     #filter {
         display: none;
+    }
+
+    .dropdown {
+        width: 50vw;
     }
 
     #filter select, #filter-icon {
@@ -300,10 +303,7 @@ details > summary:first-of-type {
         margin: 20px 0;
     }
 
-    .dropdown {
-        
-        margin: auto;
-    }
+    
 
     #filter-icon {
         display: block;

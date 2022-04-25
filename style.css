@@ -134,8 +134,7 @@ header {
     margin: auto;
     display: flex;
     flex-direction: row;
-    gap: 45px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .dropdown {
@@ -278,15 +277,32 @@ details > summary:first-of-type {
     }
 
     #filter-cont {
-        height: 100px;
+        min-height: 100px;
         display: block;
         display: flex;
         justify-content: right;
-
     }
     
     #filter {
+        display: flex;
+    }
+    select#filter {
+        margin: auto;
+    }
+    #filter {
         display: none;
+    }
+
+    #filter select, #filter-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .dropdown {
+        
+        margin: auto;
     }
 
     #filter-icon {

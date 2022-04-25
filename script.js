@@ -130,6 +130,23 @@ let loadFunction = (gogo) => {
 }
 loadBtn.addEventListener("click", loadFunction)
 
+
+const filter = document.querySelector("#filter-icon")
+
+function myFunction() {
+    console.log("heihei");
+    var x = document.getElementById("filter");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+
+    } else {
+        x.style.display = "block";
+        //filter.style.display = "none";
+    }
+}
+
+filter.addEventListener("click", myFunction)
+
 const rolleSelector = document.querySelector("#filterRolle")
 const semesterSelector = document.querySelector("#filterSemester")
 const kategoriSelector = document.querySelector("#filterKategori")

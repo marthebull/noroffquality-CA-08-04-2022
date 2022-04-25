@@ -211,8 +211,6 @@ let filterFunction = () => {
         console.log(filteredList);
 
 
-
-
     //kategori selector
     let filterKategori = [];
     filterKategori.push(kategoriSelector.value);
@@ -261,6 +259,8 @@ let filterFunction = () => {
 
     listEvents(filteredList)
 }   
+
+
 rolleSelector.addEventListener("change", filterFunction)
 kategoriSelector.addEventListener("change", filterFunction)
 semesterSelector.addEventListener("change", filterFunction)

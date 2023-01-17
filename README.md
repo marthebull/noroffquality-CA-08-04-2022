@@ -1,5 +1,5 @@
 ## Noroffquality made as a school project 
-#### Collaboration with [Sander Hammersland](https://github.com/Sanhamm)
+### Collaboration with [Sander Hammersland](https://github.com/Sanhamm)
 
 **Visit the live site here [Noroff quality](https://noroffqlty.netlify.app/)**
 
